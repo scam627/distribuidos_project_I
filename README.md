@@ -20,3 +20,9 @@
 
   - Crea hilo que reciba las direcciones de los servidores en el sistema y las añada a la lista de servidores de ser necesario.
   - Crear hilos que reciban las peticiones de los clientes y como respuesta envie la lista de servidores actualizada en ese momento.
+
+## Estructura de datos
+
+- Comunicación Servidor-Distribución: Distribución recive String "ip port"
+- Comunicación Cliente-Distribución: La distribución envia a el cliente la lista de servidores en forma de string "ip port , ip port ...".
+- Comunicación Cliente-Servidor: El servidor recibe los recursos que el cliente solicita en el siguiente formato "cpu memory", el servidor responde con un string "0" o "1"
