@@ -24,5 +24,5 @@
 ## Estructura de datos
 
 - Comunicación Servidor-Distribución: Distribución recive String "ip port"
-- Comunicación Cliente-Distribución: La distribución envia a el cliente la lista de servidores en forma de string "ip port , ip port ...".
+- Comunicación Cliente-Distribución: La distribución envia a el cliente la lista de servidores en forma de string "ip port , ip port ..." cuando el cliente lo solicita enviando el string "get ips" al servidor.
 - Comunicación Cliente-Servidor: El servidor recibe los recursos que el cliente solicita en el siguiente formato "cpu memory", el servidor responde con un string "0" o "1"
