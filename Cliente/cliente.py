@@ -27,24 +27,37 @@ def recorrerDirecciones(self,listaDireccion):
 	direcciones = []
 	direcciones = listaDireccion
 	mensaje = pedirDatos()
-	respuesta = 0
-	cont = 0
-	while (respuesta == 0):
+	respuesta = '0'
+	estado = "no se cumplio"
+	#cont = 0
+	for l in direcciones:
+	#while (respuesta == '0'):
 		#hacer split por espacio de Ip y puerto
-		ip,port = direcciones[cont].split(" ")
+		ip,port = direcciones[l].split(" ")
 		s1 = socket.socket()
 		s1.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		s1.connect((ip, port))
 		client_socket . send (mensaje)
+		respuesta = client_socket.recv(1024) # respuesta???
 		#hacer coneccion al servidor y esperar respuesta
+		if (respuesta == '1'):
+			estado = "se cumplio"
+			return estado
+		#cont += 1
+	return estado
 
 
 
-client_socket . close ()
+
 
 if __name__ == '__main__':
 	pedirIP() # envia peticion de ip a servidor de distribucion
 	direccion = client_socket.recv(1024) # recibe un string con todas las direcciones por parte del servidor de distribucion
+	client_socket . close ()
 	lista = recibeDirecciones(direccion) #realiza la separacion de todas las direcciones y las devuelve en una lista
-	recorrerDirecciones(lista)
-
+	mostrar = recorrerDirecciones(lista)
+	if (mostrar == '0'):
+		pass
+		pass
+		mostrar = recorrerDirecciones(lista)
+	print mostrar
