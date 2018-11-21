@@ -24,7 +24,7 @@ print 'Socket now listening'
 
 def handler(conn, addr):    
 	data = conn . recv (1025)
-	reply = "1"
+	reply = "0"
 	conn.sendall(reply)
 
 #now keep talking with the client

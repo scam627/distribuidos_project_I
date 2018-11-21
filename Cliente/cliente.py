@@ -4,7 +4,7 @@ import sys
 ### //crear coneccion
 sDist = socket.socket()
 sDist.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-sDist.connect(('localhost', 9997))
+sDist.connect(('localhost', 9989))
 ### Envia un mensaje solicitando las Ip en un string por parte del servidor de distribucion
 def pedirIP():
 	sDist . send ("get ips")
@@ -35,6 +35,7 @@ def recorrerDirecciones(listaDireccion):#retorna si se ejecuta el proceso o no, 
 	#while (respuesta == '0'):
 		#hacer split por espacio de Ip y puerto
 		ip,port = l.split()
+		print ip, port
 		s1 = socket.socket()
 		s1.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		s1.connect((ip, int(port)))

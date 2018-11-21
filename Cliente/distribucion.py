@@ -4,7 +4,7 @@ import thread
 import math
  
 HOST = ''   # Symbolic name, meaning all available interfaces
-PORT = 9997 # Arbitrary non-privileged port
+PORT = 9989 # Arbitrary non-privileged port
  
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print 'Socket created'
@@ -24,7 +24,7 @@ print 'Socket now listening'
 
 def handler(conn, addr):    
 	data = conn . recv (1025)
-	reply = "127.0.0.1 9992, 127.0.0.1 9991, 127.0.0.1 9993"
+	reply = "127.0.0.1 9992, 127.0.0.1 9991, 127.0.0.1 9993, 192.168.1.10 9999"
 	conn.sendall(reply)
 
 #now keep talking with the client
